@@ -4,7 +4,7 @@ from flask import render_template
 # from flask.ext.script import Manager
 # manager = Manager(app)
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 
 @app.route('/')
@@ -15,7 +15,7 @@ def main():
 
 @app.route('/user/<name>')
 def greet(name):
-    return render_template('working_with_flask/static/user.html', name=name)
+    return render_template('user.html', name=name)
 
 
 if __name__ == "__main__":
